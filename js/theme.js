@@ -3,6 +3,12 @@ window.addEventListener('load', (e) => {
     var theme = {
         dark: false
     }
+    
+    var hours = new Date().getHours()
+    var isDayTime = hours > 6 && hours < 20
+    if (!isDayTime) {
+        toggle_mode();
+    }
 
     document.querySelector('.theme-switch').addEventListener('click', function (e) {
         e.preventDefault();
